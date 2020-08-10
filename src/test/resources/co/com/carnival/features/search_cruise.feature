@@ -31,3 +31,19 @@
       And it is allowed to manage the price filter
       And it is allowed to manage the search sort filter by prices
 
+    Scenario: Select a cruise offered on the page and try to book without searching with the default filters
+      Given a web browser on the Carnival page
+      When i give you search
+      And i select a cruise
+      Then select the day of the cruise and get the detailed information of the itinerary
+      And I validate the presence of the reservation button
+
+    Scenario: Select a cruise by searching with a default filter of Bahamas origin and duration 6-9 days, and try to book
+      Given a web browser on the Carnival page
+      When i give you search
+      And i enter the origin of the cruise
+      And enter the duration of the cruise
+      And i select a cruise
+      Then select the day of the cruise and get the detailed information of the itinerary
+      And I validate the presence of the reservation button
+

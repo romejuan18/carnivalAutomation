@@ -1,6 +1,7 @@
 package co.com.carnival.steps;
 
 import co.com.carnival.pages.CruiseResultsPage;
+import co.com.carnival.pages.DetailedCruiseInformation;
 import co.com.carnival.pages.HomePage;
 import net.thucydides.core.annotations.Step;
 import org.fluentlenium.core.annotation.Page;
@@ -9,6 +10,7 @@ public class SearchStep {
 
   @Page HomePage homePage;
   @Page CruiseResultsPage cruiseResultsPage;
+  @Page DetailedCruiseInformation detailedCruiseInformation;
 
   @Step
   public void openPageCarnival() {
@@ -48,5 +50,20 @@ public class SearchStep {
   @Step
   public void validateSortPricesFilter() {
     cruiseResultsPage.selectSortPricesFilter();
+  }
+
+  @Step
+  public void selectCruise() {
+    cruiseResultsPage.selectCruise();
+  }
+
+  @Step
+  public void validateItineraryDetail() {
+    detailedCruiseInformation.selectDetailItinerary();
+  }
+
+  @Step
+  public void validatePresenceReserve() {
+    detailedCruiseInformation.validatePresenceReserve();
   }
 }

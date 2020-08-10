@@ -49,4 +49,19 @@ public class SearchDefinition {
   public void validateSortPricesFilter() {
     searchStep.validateSortPricesFilter();
   }
+
+  @When("^i select a cruise$")
+  public void selectCruise(){
+    searchStep.selectCruise();
+  }
+
+  @Then("^select the day of the cruise and get the detailed information of the itinerary$")
+  public void validateItineraryDetail(){
+    searchStep.validateItineraryDetail();
+  }
+
+  @Then("^I validate the presence of the reservation button$")
+  public void validatePresenceReserve(){
+    searchStep.validatePresenceReserve();
+  }
 }
