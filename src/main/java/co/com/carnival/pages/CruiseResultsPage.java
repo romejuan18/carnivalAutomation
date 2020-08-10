@@ -14,6 +14,9 @@ public class CruiseResultsPage extends PageObject {
   @FindBy(id = "sfn-nav-sort-pricing")
   WebElementFacade btnSortPrices;
 
+  @FindBy(xpath = ".//ccl-view-result-grid-footer/div/div[2]/a")
+  WebElementFacade btnSpecificCruise;
+
   public void selectDisplayFilter() {
     btnGridFilter.waitUntilPresent();
     btnGridFilter.waitUntilClickable().click();
@@ -27,5 +30,10 @@ public class CruiseResultsPage extends PageObject {
   public void selectSortPricesFilter() {
     btnSortPrices.waitUntilPresent();
     btnSortPrices.waitUntilClickable().click();
+  }
+
+  public void selectCruise() {
+    btnSpecificCruise.waitUntilPresent();
+    btnSpecificCruise.waitUntilClickable().click();
   }
 }
